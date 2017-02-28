@@ -25,13 +25,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-
-      //  Picasso.with(this).load("http://i.imgur.com/DvpvklR.png")
-      //  .into((ImageView) findViewById(R.id.im));
+       setContentView(R.layout.main);
 
 
-        rv=(RecyclerView)findViewById(R.id.rv2);
+
+        rv=(RecyclerView)findViewById(R.id.rv);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
@@ -41,27 +39,20 @@ public class MainActivity extends AppCompatActivity {
         initializeAdapter();
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-
-
-            }
-        });
     }
-
 
     private void initializeData(){
         products = new ArrayList<>();
-        products.add(new ProductData("Emma Wilson",  R.mipmap.ic_launcher));
-       // products.add(new ProductData("Lavery Maiss",  R.drawable.lavery));
-       // products.add(new ProductData("Lillie Watts",  R.drawable.lillie));
+        products.add(new ProductData("Carrot",  R.drawable.carrot));
+        products.add(new ProductData("Tomatos",  R.drawable.tomatos));
+        products.add(new ProductData("Lemon",  R.drawable.lemon));
+        products.add(new ProductData("Orange", R.drawable.orange));
+        products.add(new ProductData("Milk", R.drawable.milk));
+        products.add(new ProductData("Vine", R.drawable.vine));
+        products.add(new ProductData("Peaches", R.drawable.peaches));
+        products.add(new ProductData("Juice", R.drawable.juices));
+        products.add(new ProductData("Cucumbers", R.drawable.cucumbers));
     }
 
     private void initializeAdapter(){
@@ -70,29 +61,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
 
 
 
-}
+
